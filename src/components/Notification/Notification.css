@@ -1,0 +1,33 @@
+.notification {
+	position: fixed;
+	left: 100px;
+	bottom: 100px;
+	max-width: 200px;
+	width: 100%;
+	min-height: 50px;
+	background-color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 5px;
+}
+
+
+.notification__message {
+	font-size: 20px;
+}
+
+.notification__btn {
+	position: absolute;
+	left: 5px;
+	top: 5px;
+	border: none;
+	background: none;
+	cursor: pointer;
+	transition: background-color .3s ease;
+}
+
+.notification__btn:hover {
+	background-color: yellow
+}
+

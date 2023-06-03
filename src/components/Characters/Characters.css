@@ -1,0 +1,51 @@
+
+.character__wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: transparent;
+	backdrop-filter: blur(5px);
+}
+
+.character__list {
+	position: relative;
+	max-width: 70%;
+	width: 100%;
+	margin: 0 auto;
+	height: 60%;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+	background-color: #f2f2f2;
+	padding: 30px;
+	overflow-y: auto;
+	gap: 20px;
+}
+.character__list button {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	background: none;
+	border: none;
+	cursor: pointer;
+	font-size: 20px;
+}
+.character__item {
+	padding: 5px 5px 15px 5px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	row-gap: 10px;
+	background-color: #fff;
+	box-shadow: #fff;
+	text-align: center;
+}
+
+.character__item img {
+	width: 100%;
+	object-fit: contain;
+}

@@ -8,6 +8,7 @@ import {
 import { getDataApi } from '../..//services/getDataApi'
 import { ROOT_INDEX } from '../../constants/root'
 import Error from '../Error/Error'
+import Characters from '../Characters/Characters'
 
 import './Comics.css'
 
@@ -36,8 +37,8 @@ class Comics {
 
   async render() {
     const data = await getDataApi.getData(API_URL + URL_COMICS)
-	
-	data ? this.renderComics(data) : Error.render()
+
+    data ? this.renderComics(data) : Error.render()
   }
 
   eventListener() {
@@ -48,16 +49,10 @@ class Comics {
         return
       }
 
-      const li = e.target.closest('.comics__item')
+      const li = e.target.closest('.comics__item'),
+        url = `${API_URL}${URL_COMICS}/${li.dataset.id}/${URL_CHARACTERS}`
 
-      const data = await getDataApi.getData(
-        `${API_URL}${URL_COMICS}/${li.dataset.id}/${URL_CHARACTERS}`
-      )
-
-      if (!data.length) {
-        Error.render()
-        document.body.style.overflow = 'hidden'
-      }
+      await Characters.render(url)
     })
   }
 }
