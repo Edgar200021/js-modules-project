@@ -34,5 +34,6 @@
 
 .comics__img {
 	width: 100%;
+	object-fit: contain;
 	transition: filter .3s ease-in;
 }
